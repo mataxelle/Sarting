@@ -1,7 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: #FFF;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1082,6 +1079,13 @@ h4 {
     .blocsapp-device-iphone5 img {
         width: 180px;
         height: 320px;
+    }
+}
+
+@media (max-width: 400px) {
+    .bloc {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
