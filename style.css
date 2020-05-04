@@ -7,6 +7,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+header, footer, main {
+    display: block;
+}
+
 a,
 button {
     transition: all .3s ease-in-out;
@@ -294,7 +298,7 @@ a:hover {
 
 .navbar-brand {
     height: auto;
-    padding: 3px 15px;
+    padding: 3px 3px;
     font-size: 25px;
     font-weight: normal;
     font-weight: 600;
@@ -353,6 +357,27 @@ a:hover {
 
 .nav-invert .navbar .nav {
     float: left;
+}
+
+.navbar-header a {
+    display: flex;
+}
+
+.navbar-header p {
+    font-size: 25px;
+    font-family: 'Viaoda Libre', cursive;
+    padding: 0px!important;
+    color: black!important;
+}
+
+@media (max-width: 320px) {
+    .navbar-header p {
+        font-size: 18px;
+    }
+}
+
+.navbar-header img {
+    height: 40px;
 }
 
 .nav-invert .navbar-header,
@@ -584,6 +609,7 @@ a[data-lightbox]:hover img {
     left: 15px;
     right: 15px;
     bottom: 5px;
+    text-align: center;
 }
 
 .close-lightbox {
@@ -591,7 +617,7 @@ a[data-lightbox]:hover img {
     font-size: 30px;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 5px;
     z-index: 20;
     background: rgba(0, 0, 0, .5);
     border: none;
@@ -621,16 +647,16 @@ a[data-lightbox]:hover img {
 
 .next-lightbox {
     padding: 6px 8px 1px 13px;
-    right: 25px;
+    right: 5px;
 }
 
 .prev-lightbox {
     padding: 6px 13px 1px 10px;
-    left: 25px;
+    left: 5px;
 }
 
 .snapshot-lb .modal-body {
-    padding-bottom: 45px;
+    padding-bottom: 55px;
 }
 
 .snapshot-lb .lightbox-caption {
@@ -639,7 +665,6 @@ a[data-lightbox]:hover img {
     background: none;
 }
 
-h1,
 h2,
 h3,
 h4,
@@ -651,7 +676,7 @@ label,
 a {
     font-family: "helvetica";
     font-weight: 400;
-    color: #575757!important;
+    color: hsla(200,0%,0%,.7)!important;
 }
 
 .container {
@@ -660,6 +685,12 @@ a {
 
 .hero-bloc-text {
     font-size: 38px;
+}
+
+@media (max-width: 400px) {
+    .hero-bloc-text {
+        font-size: 30px;
+    }
 }
 
 .hero-bloc-text-sub {
@@ -677,7 +708,7 @@ a {
 }
 
 p {
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .tight-width-whitespace {
@@ -699,18 +730,50 @@ p {
     font-weight: 700;
 }
 
-.social {
-    max-width: 400px;
-    margin: auto auto auto auto;
+.social, .partenaire, .secteur {
+    margin: 20px 10px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+@media (max-width: 400px) {
+    .social {
+        flex-direction: column;
+        margin: 0px;
+    }
+}
+
+.partenaire {
+    flex-direction: column;
+    align-items: center;
+}
+
+.partenaire-l {
+    display: flex;
 }
 
 .lien-hidden {
-    display: none;
+    visibility: hidden;
+}
+
+@media (max-width: 400px) {
+    .partenaire-l {
+        flex-wrap: wrap;
+    }
+}
+
+.secteur__lien:hover {
+    color: red!important;
+}
+.col-sm-12 {
+    position: relative;
 }
 
 h2 {
     font-size: 22px;
     line-height: 1.4em;
+    position: relative;
 }
 
 h3 {
@@ -724,10 +787,6 @@ h3 {
     max-width: 800px;
     margin: auto auto auto auto;
     box-shadow: 0px 0px 0px #000000;
-}
-
-h1 {
-    color: #333333!important;
 }
 
 h4 {
@@ -775,20 +834,24 @@ h4 {
 }
 
 .bgc-atomic-tangerine {
-    background-color: #F3976C;
+    background-color: rgb(148, 54, 11);
 }
 
 .tc-white {
-    color: #F3976C!important;
+    color: #FFF!important;
+}
+
+.tc-yellow {
+    color: rgb(252, 207, 111)!important;
 }
 
 .btn-atomic-tangerine {
-    background: #F3976C;
+    background: rgb(148, 54, 11);
     color: #FFFFFF!important;
 }
 
 .btn-atomic-tangerine:hover {
-    background: #c27956!important;
+    background: rgb(148, 54, 11)!important;
     color: #FFFFFF!important;
 }
 
@@ -826,7 +889,7 @@ h4 {
 }
 
 .bg-presentation {
-    background-image: url("img/image-de-presentation.bmp");
+    background-image: url("img/image-de-presentation.jpg");
 }
 
 @media (max-width: 1024px) {
@@ -852,13 +915,13 @@ h4 {
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .b-parallax {
         background-attachment: scroll;
     }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
     .b-parallax {
         background-attachment: scroll;
     }
@@ -876,20 +939,10 @@ h4 {
         overflow-x: hidden;
         position: relative;
     }
-    .bloc {
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
-    }
     .bloc-group,
     .bloc-group .bloc {
         display: block;
         width: 100%;
-    }
-    .bloc-fill-screen .fill-bloc-top-edge,
-    .bloc-fill-screen .fill-bloc-bottom-edge {
-        padding: 0 20px;
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
     }
 }
 
